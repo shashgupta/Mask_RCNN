@@ -178,7 +178,7 @@ class NewspaperDataset(utils.Dataset):
         #     rr, cc = skimage.draw.polygon(p['all_points_y'], p['all_points_x'])
         #     mask[rr, cc, i] = 1
 
-        path = image_id.split(os.sep)
+        path = image_info['id'].split(os.sep)
         mask_path = os.path.join(path[0], path[1] + 'annot', path[2].replace('new', 'label'))
 
         mask_image = skimage.io.imread(mask_path)
