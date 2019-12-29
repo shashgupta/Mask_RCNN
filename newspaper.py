@@ -170,8 +170,8 @@ class NewspaperDataset(utils.Dataset):
 
         # Convert polygons to a bitmap mask of shape
         # [height, width, instance_count]
-        info = image_info[image_id]
-        mask = np.zeros([info["height"], info["width"], 2],
+        info = image_info['id']
+        mask = np.zeros([image_info["height"], image_info["width"], 2],
                         dtype=np.uint8)
         # for i, p in enumerate(info["polygons"]):
         #     # Get indexes of pixels inside the polygon and set them to 1
