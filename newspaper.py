@@ -248,9 +248,9 @@ def detect_articles(model, image_path=None, out_dir=None):
     # Image or video?
     if image_path:
         # Run model detection and generate the color splash effect
-        print("Running on {}".format(args.image))
+        print("Running on {}".format(image_path))
         # Read image
-        image = skimage.io.imread(args.image)
+        image = skimage.io.imread(image_path)
         # Detect objects
         r = model.detect([image], verbose=1)[0]
         # Color splash
