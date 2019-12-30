@@ -236,7 +236,8 @@ def get_article(image, mask):
     if mask.shape[-1] > 0:
         # We're treating all instances as one, so collapse the mask into one layer
         mask = (np.sum(mask, -1, keepdims=True) >= 1)
-        splash = np.where(mask, image, gray).astype(np.uint8)
+        # splash = np.where(mask, image, gray).astype(np.uint8)
+        splash = mask.astype(np.uint8)
     else:
         splash = gray.astype(np.uint8)
     return splash
